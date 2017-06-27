@@ -101,7 +101,7 @@ bainu.error(function(res){
 ```
 注意：
 - `complete`回调函数接收到的参数为完全格式，
-- `fail`回调函数接收到的参数为error部分，
+- `fail`回调函数接收到的参数为error部分，error的code请看`附1`。
 - `success`与`cancel`回调函数接收到的参数为data部分。
 
 ### 基础接口
@@ -219,3 +219,13 @@ bainu.getLocation({
 ```javascript
 bainu.closeWindow();
 ```
+
+### 附录
+#### 1.错误代码
+|code|desc|
+|----|----|
+|1   |failed|
+|2   |params error|
+|3   |resource not found|
+|4   |api not supported|
+|5   |need auth|
