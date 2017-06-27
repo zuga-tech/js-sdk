@@ -6,7 +6,8 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
 
 ## JSSDK使用步骤
 ### 1. 开发者认证
-   目前Bainu开放平台暂未开启公开注册，所以请将您的应用信息及开发者信息发送到 business@zuga-tech.com 。我们审核通过后会联系您。需要提供的信息：
+   目前Bainu开放平台暂未开启公开注册，所以请将你的应用信息及开发者信息发送到 business@zuga-tech.com ，我们审核通过后会联系你。
+   需要提供的信息：
    - **应用名称**
    - **蒙文名称**
    - **LOGO** （640*640）
@@ -16,7 +17,7 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
    - **团队或个人介绍**
    - **联系方式**
 
-   通过邮件申请通过后会给您返回一下信息：
+   邮件申请通过后会你将获得：
    - **appId**
    - **jsapi_ticket** （用于生成JS-SDK权限验证的签名，由于目前没有公开开放，所提供的jsapi_ticket是固定的，请妥善管理。）
    - **可使用的api列表**
@@ -49,7 +50,7 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
 ### 2. 引入js文件
    在需要使用Bainu js-sdk的页面引入如下js文件。`http://static.zuga-tech.com/bainu-js-sdk-1.0.js`
 ### 3. 通过config接口注入权限验证配置
-   所有需要使用JS-SDK的页面必须先注入配置信息，否则将无法调用（同一个url仅需调用一次，对于变化url的SPA的web app可在每次url变化时进行调用,目前Android客户端不支持pushState的H5新特性，所以使用pushState来实现web app的页面会导致签名失败，此问题会在Android6.2中修复）。
+   所有需要使用JS-SDK的页面必须先注入配置信息，否则将无法调用（同一个url仅需调用一次，对于变化url的SPA的web app可在每次url变化时进行调用）。
 ```javascript
 bainu.config({
     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -74,7 +75,7 @@ bainu.ready(function() {
 
 ```javascript
 bainu.error(function(res){
-    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看。
 });
 ```
 
@@ -86,7 +87,7 @@ bainu.error(function(res){
    - cancel：用户点击取消时的回调函数，仅部分有用户取消操作的api才会用到。
    - trigger: 监听Menu中的按钮点击时触发的方法，该方法仅支持Menu中的相关接口。
 
-以上接口返回的数据格式为：
+所有接口返回的数据格式为：
 ```
 {
   code: int,   // 0=>success, 1=>cancel, 2=>error ， 每个接口必须返回
