@@ -6,7 +6,6 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
 
 ## JSSDK使用步骤
 ### 1. 开发者认证
-   bainu js sdk有些api开发者可以直接使用，但是input，chooseImage，uploadImage，getLocalImageData，openLocation， getLocation等接口必须通过开发者认证才能使用。
    目前Bainu开放平台暂未开启公开注册，所以请将你的应用信息及开发者信息发送到 business@zuga-tech.com ，我们审核通过后会联系你。
    需要提供的信息：
    - **应用名称**
@@ -21,7 +20,7 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
    邮件申请通过后会你将获得：
    - **appId**
    - **jsapi_ticket** （用于生成JS-SDK权限验证的签名，由于目前没有公开开放，所提供的jsapi_ticket是固定的，请妥善管理）
-   - **可使用的api列表**（通过config接口权限验证后可以使用input，chooseImage，uploadImage，getLocalImageData，openLocation， getLocation等接口）
+   - **可使用的api列表**
 
    签名生成规则如下：参与签名的字段包括noncestr（随机字符串）, 有效的jsapi_ticket, timestamp（时间戳）, url（当前网页的URL，不包含#及其后面部分，请注意路径末尾或`?`前面会加`/`的问题。） 。对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串string1。这里需要注意的是所有参数名均为小写字符。对string1作sha1加密，字段名和字段值都采用原始值，不进行URL 转义。
    即signature=sha1(string1)。 示例：
@@ -50,7 +49,7 @@ bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法�
 
 ### 2. 引入js文件
    在需要使用Bainu js-sdk的页面引入如下js文件。`http://static.zuga-tech.com/bainu-js-sdk-1.0.js`
-### 3. 通过config接口注入权限验证配置（使用需认证的接口时调用）
+### 3. 通过config接口注入权限验证配置
    所有需要使用JS-SDK的页面必须先注入配置信息，否则将无法调用（同一个url仅需调用一次，对于变化url的SPA的web app可在每次url变化时进行调用）。
 ```javascript
 bainu.config({
