@@ -195,8 +195,8 @@ bainu.getLocalImageData({
 #### 压缩并上传
 ```javascript
 bainu.uploadVideo({
-  'min': 0, // 最小长度（毫秒）
-  'max':  15000, // 最大长度（毫秒）
+  'min': 1000, // 最小长度（毫秒）, 默认1000且必须大于1000毫秒
+  'max':  15000, // 最大长度（毫秒）, 最大支持小于等于600000毫秒
   'success' : function(res) {
     var url = res.url, // 视频地址
         length = res.length, // 视频长度（字节）
@@ -205,6 +205,15 @@ bainu.uploadVideo({
         height = res.height, // 高度 （像素）
         duration = res. duration; // 时长（毫秒）
   }
+});
+```
+
+#### 视频播放
+使用自带播放器播放视频（MP4）
+```javascript
+bainu.playVideo({
+  'url' : '', // 视频地址（视频必须为MP4）
+  'image' : '', // 视频截图地址
 });
 ```
 
