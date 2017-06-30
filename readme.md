@@ -167,7 +167,7 @@ bainu.uploadImage({
   'localIds': [], //需要上传的图片的本地ID列表，由chooseImage接口获得
   'isShowProgressTips': 1, // 默认为1，显示进度提示
   'success': function(res){
-    var url = res.url; // 返回图片的网络地址
+    var urls = res.urls; // 返回图片的网络地址
    },
 });
 ```
