@@ -167,7 +167,7 @@ bainu.uploadImage({
   'localIds': [], //需要上传的图片的本地ID列表，由chooseImage接口获得
   'isShowProgressTips': 1, // 默认为1，显示进度提示
   'success': function(res){
-    var urls = res.urls; // 返回图片的网络地址
+    var url = res.url; // 返回图片的网络地址
    },
 });
 ```
@@ -195,8 +195,8 @@ bainu.getLocalImageData({
 #### 压缩并上传
 ```javascript
 bainu.uploadVideo({
-  'min': 1000, // 最小长度（毫秒）, 默认1000且必须大于1000毫秒
-  'max':  15000, // 最大长度（毫秒）, 最大支持小于等于600000毫秒
+  'min': 1, // 最小长度（秒）, 默认1且必须大于1秒
+  'max':  15, // 最大长度（秒）, 最大支持小于等于600秒
   'success' : function(res) {
     var url = res.url, // 视频地址
         length = res.length, // 视频长度（字节）
