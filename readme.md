@@ -117,8 +117,8 @@ bainu.alert({
 ```javascript
 bainu.confirm({
   'message': '', // 提示内容
-  'confirm': '', // 确认按钮文字
-  'deny' : '', // 取消按钮文字
+  'confirm': '', //可选，确认按钮文字
+  'deny' : '', //可选，取消按钮文字
   'success': function(res){
     // 确定
   },
@@ -132,10 +132,10 @@ bainu.confirm({
 使用bainu自带的原生输入框及bainu输入法进行蒙文输入
 ```javascript
 bainu.input({
-  'text': '', //当前文本框已经存在的内容
-  'placeholder': '', //提示文本
-  'maxLength': 1000, // 长度限制 默认:1000
-  'line': 0, //0: 多行, 1:单行 默认: 0
+  'text': '', //可选，当前文本框已经存在的内容
+  'placeholder': '', //可选，提示文本
+  'maxLength': 1000, //可选，长度限制 默认:1000
+  'line': 0, //可选，0: 多行, 1:单行 默认: 0
   'success': function(res){
     var text = res.text;
   },
@@ -150,8 +150,8 @@ bainu.input({
 #### 选择系统相册图片
 ```javascript
 bainu.chooseImage({
-  'count': 1, //默认9
-  'crop': true, // true 剪切, false 不剪切(只在count为1时起作用)
+  'count': 1, //可选，默认9
+  'crop': true, //可选，true 剪切, false 不剪切(只在count为1时起作用) 默认false
   'success': function(res) {
     var localIds = res.localIds; //只是该图片的编号(不可直接用于img标签，如果想获取图片数据则调用getLocalImgData)。
    },
@@ -165,9 +165,9 @@ bainu.chooseImage({
 ```javascript
 bainu.uploadImage({
   'localIds': [], //需要上传的图片的本地ID列表，由chooseImage接口获得
-  'isShowProgressTips': 1, // 默认为1，显示进度提示
+  'isShowProgressTips': 1, //可选，默认为1，显示进度提示
   'success': function(res){
-    var url = res.url; // 返回图片的网络地址
+    var urls = res.urls; // 返回图片的网络地址
    },
 });
 ```
@@ -184,7 +184,7 @@ bainu.previewImage({
 ```javascript
 bainu.getLocalImageData({
   'localId': '', //chooseImage获得的localId
-  'thumb': false, //是否返回压缩图
+  'thumb': false, //可选，默认false，是否返回压缩图
   'success': function(image) {
     var imageBase64 = image.base64; // 图片文件的base64，不包含类型及等数据，img标签src显示时应加 'data:image/png;base64,' + image.base64
   }
@@ -195,7 +195,7 @@ bainu.getLocalImageData({
 #### 压缩并上传
 ```javascript
 bainu.uploadVideo({
-  'min': 1, // 最小长度（秒）, 默认1且必须大于1秒
+  'min': 1, //可选，最小长度（秒）必须大于1秒, 默认1
   'max':  15, // 最大长度（秒）, 最大支持小于等于600秒
   'success' : function(res) {
     var url = res.url, // 视频地址
@@ -232,7 +232,7 @@ bainu.getNetworkType({
 #### 获取地理位置
 ```javascript
 bainu.getLocation({
-  'type': 0, //0:后台获取 或1:显示地图自己定位获取. 默认0
+  'type': 0, //可选，0:后台获取 或1:显示地图自己定位获取. 默认0
   'success': function(res) {
     var latitude = res.latitude,
         longitude = res.longitude;
