@@ -1,6 +1,6 @@
 # Bainu JS SDK
 ## 概述
-Bainu js-sdk 是面向蒙古文网页开发者提供的基于bainu的网页开发工具包。
+Bainu js sdk 是面向蒙古文网页开发者提供的基于bainu的网页开发工具包。
 由于蒙古文的书写方向、输入法，对很多移动网站应用来说解决显示与输入成了较大的难题，现在开发者们可以使用Bainu js sdk来快速实现移动网站应用，让移动网站应用具有更好的用户体验。
 bainu js sdk 提供了蒙古文的弹出框，确认框，输入框，输入法等基础组件功能外，还有选图、位置等功能。让开发者的工作变得更为高效。为bainu用户提供了更优质的网页体验。
 
@@ -74,7 +74,7 @@ bainu.ready(function() {
 ### 5. 通过error接口处理失败验证
 
 ```javascript
-bainu.error(function(res){
+bainu.error(function(res) {
     // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看。
 });
 ```
@@ -150,7 +150,7 @@ bainu.input({
 #### 选择系统相册图片
 ```javascript
 bainu.chooseImage({
-  'count': 1, //可选，默认9
+  'count': 1, //可选，1-9，默认9
   'crop': true, //可选，true 剪切, false 不剪切(只在count为1时起作用) 默认false
   'success': function(res) {
     var localIds = res.localIds; //只是该图片的编号(不可直接用于img标签，如果想获取图片数据则调用getLocalImgData)。
@@ -165,7 +165,7 @@ bainu.chooseImage({
 ```javascript
 bainu.uploadImage({
   'localIds': [], //需要上传的图片的本地ID列表，由chooseImage接口获得
-  'isShowProgressTips': 1, //可选，默认为1，显示进度提示
+  'isShowProgressTips': true, //可选，默认为true，显示进度提示
   'success': function(res){
     var urls = res.urls; // 返回图片的网络地址
    },
