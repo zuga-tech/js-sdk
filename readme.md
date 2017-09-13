@@ -269,12 +269,12 @@ bainu.closeWindow();
 
 ### 附录
 #### 3.菜单列表项
-分享到聊天:menu.share.chat
-分享到chomorlig:menu.share.moment
-添加到收藏:menu.favorite
-使用safari打开:menu.openWithSafari
-使用邮件发送:menu.share.email
-复制文本:menu.copyUrl
+- 分享到聊天:menu.share.chat
+- 分享到chomorlig:menu.share.moment
+- 添加到收藏:menu.favorite
+- 使用safari打开:menu.openWithSafari
+- 使用邮件发送:menu.share.email
+- 复制文本:menu.copyUrl
 #### 2.错误代码
 |code|desc|
 |----|----|
