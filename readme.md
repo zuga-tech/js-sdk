@@ -101,7 +101,7 @@ bainu.error(function(res) {
 ```
 注意：
 - `complete`回调函数接收到的参数为完全格式，
-- `fail`回调函数接收到的参数为error部分，error的code请看`附1`。
+- `fail`回调函数接收到的参数为error部分，error的code请看`附3`。
 - `success`与`cancel`回调函数接收到的参数为data部分。
 
 ### 基础接口
@@ -249,6 +249,17 @@ bainu.openLocation({
   'longitude': 0// 经度，浮点数，范围为180 ~ -180
 });
 ```
+
+### 菜单
+#### 隐藏菜单项
+```javascript
+bainu.hideMenuItems({
+  items:[] // ['menu.copyUrl', ... ]等要隐藏的菜单项名称 请看附1.
+});
+```
+注意:
+  刷新与举报不能被隐藏.
+
 ### 其它接口
 
 #### 关闭当前窗口
@@ -257,7 +268,14 @@ bainu.closeWindow();
 ```
 
 ### 附录
-#### 1.错误代码
+#### 3.菜单列表项
+分享到聊天:menu.share.chat
+分享到chomorlig:menu.share.moment
+添加到收藏:menu.favorite
+使用safari打开:menu.openWithSafari
+使用邮件发送:menu.share.email
+复制文本:menu.copyUrl
+#### 2.错误代码
 |code|desc|
 |----|----|
 |1   |failed|
@@ -266,7 +284,7 @@ bainu.closeWindow();
 |4   |api not supported|
 |5   |need auth|
 
-#### 2.接口列表（1.0）
+#### 3.接口列表（1.1）
   - **config**
   - **alert**
   - **confirm**
@@ -280,4 +298,5 @@ bainu.closeWindow();
   - **getNetworkType**
   - **openLocation**
   - **getLocation**
+  - **hideMenuItems**
   - **closeWindow**
