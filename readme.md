@@ -254,7 +254,7 @@ bainu.openLocation({
 #### 隐藏菜单项
 ```javascript
 bainu.hideMenuItems({
-  items:[] // ['menu.copyUrl', ... ]等要隐藏的菜单项名称 请看附1.
+  items:[] // ['menu.copyUrl', ... ]等要隐藏的菜单项名称, 如果全部显示则传入空数组. 请看附1.
 });
 ```
 注意:
